@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Contenedor de la base de datos
 
 ## Definimos el USER_NAME
@@ -46,3 +47,7 @@ Visite las direcciones
 `localhost:3000/usuario/1`
 `localhost:3000/crear`
 
+=======
+# Pet-shop
+Simple Express and Postgresql app
+>>>>>>> 2bf0c775230f6ea334a36bd966242c9796dc42f0
