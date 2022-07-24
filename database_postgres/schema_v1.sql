@@ -14,9 +14,25 @@ CREATE DATABASE mande_db
 
 \c mande_db
 
-CREATE TABLE usuario(
-	id_usuario SERIAL PRIMARY KEY,
-	nombre_usuario VARCHAR(60) UNIQUE,
-	password VARCHAR(60) CHECK (length(password) > 3),
-	premium BOOLEAN DEFAULT FALSE
+CREATE TABLE type_(
+	type_id SERIAL PRIMARY KEY,
+	dtype TEXT,
+	breed TEXT,
+	type_description TEXT
+);
+
+CREATE TABLE pet(
+    pid SERIAL PRIMARY KEY,
+    pet_name TEXT UNIQUE,
+    age INT, 
+    typeid INT,
+    FOREIGN KEY (typeid) REFERENCES type_(type_id)
+);
+
+CREATE TABLE toy(
+    tid SERIAL PRIMARY KEY, 
+    toy_name TEXT UNIQUE,
+    color TEXT,
+    pet_id INT,
+    FOREIGN KEY(pet_id) REFERENCES pet(pid)
 );

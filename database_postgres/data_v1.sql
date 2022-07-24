@@ -1,5 +1,5 @@
 \c mande_db
 
-INSERT INTO  usuario(nombre_usuario, password) VALUES ('trolololol@gmail.com', '1234');
-INSERT INTO  usuario(nombre_usuario, password) VALUES ('azulgrana@gmail.com', 'x123');
-INSERT INTO  usuario(nombre_usuario, password, premium) VALUES ('tyler.durden@gmail.com', 'asdfd', TRUE);
+INSERT INTO type_(dtype, breed, type_description) VALUES ('cat', 'Bengala', 'It looks like fire');
+INSERT INTO  pet(pet_name, age, typeid) VALUES ('Angel', 70, 1);
+INSERT INTO toy(toy_name, color, pet_id) VALUES('bola1', 'red', 1);

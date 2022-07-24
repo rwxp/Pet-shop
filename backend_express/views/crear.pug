@@ -13,16 +13,52 @@ head
               span(aria-hidden="true") ×
               span.sr-only Close
             h4#myModalLabel.modal-title
-              | Crear usuario
+              | Ingresar mascota
           // Modal Body
           .modal-body
-            form(role='form' method='POST' action='http://localhost:3000/usuario')
+            form(role='form' method='POST' action='http://localhost:3000/crear/')
               div.form-group
-                label(for='nombre_usuario') Name:
-                input#name.form-control(type='email', placeholder='usuario@gmail.com' name='nombre_usuario')
+                label(for='pet_name') Pet name:
+                input#name.form-control(type='text', name='pet_name')
               div.form-group
-                label(for='password') Password:
-                input#email.form-control(type='text', placeholder='xxxx' name='password')
+                label(for='pet_age') Pet age:
+                input#age.form-control(type='text', name='pet_age')
+                     
+              div.form-group
+                label(for='type') Pet type:
+                select(name='pet_type')
+                  option(value='dog') Dog
+                  option(value='cat') Cat
+              
+              div.form-group
+                label(for='description') Pet description:
+                input(type='text', name='description')
+
+                
+              
+              div.form-group
+                label(for='breed') Pet breed:
+                input(type='text', name='breed')
+
+              div.form-group
+                label(for='toy') Favorite toy:
+                select(name='toy')
+                  option(value='bola1') bola1
+                  option(value='cadena') cadena
+                  option(value='raton1') raton1
+                  option(value='raton2') raton2
+                  option(value='bola2') bola2
+                  option(value='gallo1') gallo1 
+                  option(value='peluza1') peluza1
+                  option(value='goma1') goma1    
+              div.form-group
+                label(for='color') Toy color:
+                select(name='color')
+                  option(value='red') red
+                  option(value='yellow') yellow
+                  option(value='green') green
+                  option(value='white') white
+                  option(value='black') black
               button.btn.btn-primary(type="submit", name="asdf") Create
           // Modal Footer
           .modal-footer
