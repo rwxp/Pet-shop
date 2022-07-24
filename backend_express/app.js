@@ -7,7 +7,6 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const crearRouter = require("./routes/crear");
 
-// const queryRouter = require("./routes/query");
 const mascotasRouter = require("./routes/mascotas");
 
 const app = express();
