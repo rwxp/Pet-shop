@@ -51,8 +51,8 @@ npm install
 
 Visite las direcciones
 
-`localhost:3000/hello`
-`localhost:3000/usuario`
-`localhost:3000/usuario/1`
 `localhost:3000/crear`
+`localhost:3000/mascotas`
+`localhost:3000/mascotas/idmascota`
+
 
