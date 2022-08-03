@@ -2,27 +2,28 @@
 
 ## Definimos el USER_NAME
 
-Poner un nombre de usuario en una variable de entorno. 
+Poner un nombre de usuario en una variable de entorno.
 
-`USER_NAME=andcastillo`
+`USER_NAME=sdrivert`
 
 ## Crear la imagen de docker con el esquema y los datos pre-guardados
 
 ```
 cd database_postgres
-docker build -t ${USER_NAME}/mande_db .
+docker build -t ${USER_NAME}/petshop_db .
 ```
 
 ## Poner a correr el servidor de bases de datos
 
 ```
-docker run --name mande_db -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d ${USER_NAME}/mande_db
+docker run --name petshop_db -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d ${USER_NAME}/petshop_db
 ```
+
 # Contenedor para el backend
 
 ## Instalar las dependencias
 
-Debes estar en la carpeta raìz del proyecto. 
+Debes estar en la carpeta raìz del proyecto.
 
 ```
 cd backend_express
@@ -30,11 +31,11 @@ cd backend_express
 
 ## Crear el contenedor para el backend
 
-`docker build -t ${USER_NAME}/mande_backend .`
+`docker build -t ${USER_NAME}/petshop_backend .`
 
 ## Instalar las dependencias con npm
 
-`docker run -it --rm -v $(pwd):/usr/src/app ${USER_NAME}/mande_backend /bin/bash`
+`docker run -it --rm -v $(pwd):/usr/src/app ${USER_NAME}/petshop_backend /bin/bash`
 
 En la terminal del contenerdor ejecutar
 
@@ -45,7 +46,7 @@ npm install
 
 ## Crear un contenedor con la imagen y conectarla con el servidor de bases de datos
 
-`docker run -it --rm -p 3000:3000 -v $(pwd):/usr/src/app --link mande_db:postgres --name mande_app ${USER_NAME}/mande_backend`
+`docker run -it --rm -p 3000:3000 -v $(pwd):/usr/src/app --link petshop_db:postgres --name petshop_app ${USER_NAME}/petshop_backend`
 
 # Probar la aplicación
 
@@ -54,5 +55,3 @@ Visite las direcciones
 `localhost:3000/crear`
 `localhost:3000/mascotas`
 `localhost:3000/mascotas/idmascota`
-
-
